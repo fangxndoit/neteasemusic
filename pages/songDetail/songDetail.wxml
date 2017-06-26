@@ -1,0 +1,84 @@
+<view class="{{playing?'playing':''}}" >
+<view class="bg"  >
+<view id="playing" bindtap="close">
+    <image src="../imgs/top.png" />
+  </view>
+  
+<view id="playing-main"  animation="{{animation}}"  bindtap="openlyric" >
+    <image id="playingmainbg" src="../imgs/center.png" bindtap="close" />
+    <image class="picsrc" src="{{picsrc}}" />
+    <image class="picsrcnone" src="https://p1.music.126.net/Trt7JjCRH7s9sburutLHEQ==/3383197279803331.jpg" />
+  </view>
+  <view class="nameAauthor">
+    <view class="s_name">{{name}}</view>
+    <view class="s_author">{{singer}}</view>
+  </view>
+
+
+  <view id="playing-status">
+    
+    <progress percent="{{percent}}" color="#d33a31" stroke-width="2">
+      <text style="left:{{percent}}%"></text>
+    </progress>
+    
+  </view>
+
+
+  <view id="playing-actwrap">
+    <view id="playing-info" >
+      <view class="pi-act">
+        <image src="../imgs/a_r.png" />
+      </view>
+      <view class="pi-act">
+        <image src="../imgs/a_i.png" />
+      </view>
+      <view class="pi-act" >
+        <image src="../imgs/a_e.png" />
+      </view>
+      <view class="pi-act" >
+        <image src="../imgs/a_x.png" />
+      </view>
+    </view>
+     <view id="playingaction">
+      <view class="pa-saction">
+        <image src="../imgs/way1.png" />
+      </view>
+      <view class="pa-maction" bindtap="toforen">
+        <image src="../imgs/a_left.png" />
+      </view>
+      <view class="pa-baction" hidden="{{!playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+        <image id='pa-playing' src="../imgs/a_push.png" />
+      </view>
+      <view class="pa-baction" hidden="{{playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+        <image id='pa-pause' src="../imgs/a_stop.png" />
+      </view>
+      <view class="pa-maction" bindtap="tonext">
+        <image src="../imgs/a_right.png" />
+      </view>
+      <view class="pa-saction" bindtap="open">
+        <image src="../imgs/list.png"  />
+      </view>
+      </view>
+  </view>
+</view>  
+<view>
+<view class="allsong" hidden="{{openlist}}">全部歌曲</view>
+<scroll-view scroll-y hidden="{{openlist}}" >
+  <view class="songlist">
+  
+  <view wx:for="{{allsong}}"  >
+    <view class="songname" data-songid="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.ar[0].name}}" data-picsrc="{{item.al.picUrl}}" data-index="{{index}}" bindtap="playingsong" >{{item.name}} -- <text class="songauthor">{{item.ar[0].name}}</text> </view>
+  </view>
+  </view>
+</scroll-view>
+</view>
+</view>
+<view class="lyricpage" hidden="{{lyric}}">
+<view class="closex" bindtap="closelyric">X</view>
+  <view class="lyric">
+  <text>** 暂不支持同步 **</text>
+  <view class="s_lyric">{{songLyic}}</view>
+  </view>
+  
+</view>
+

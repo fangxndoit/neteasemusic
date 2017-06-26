@@ -1,0 +1,25 @@
+<!--pages/hostSinger/hostSinger.wxml-->
+<view class="section">
+  <input  bindinput="bindKeyInput" placeholder="搜索音乐，歌手"/>
+  <image class="search" src="../imgs/s_search.png" bindtap="tosearch"></image>
+</view>
+<view class="addsong" bindtap="addsong" hidden="{{!hidden}}">加载热门歌曲</view>
+<view  hidden="{{hidden}}" class="songlist" wx:for="{{hotsong}}"
+ data-songid="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.ar[0].name}}" data-img="{{item.al.picUrl}}" data-pic="{{item.al.pic}}" data-index="{{index}}" bindtap="goSong">
+    <image src="{{item.al.picUrl}}" class="songimgs"></image>
+    <view>
+        <view class="song">{{item.name}}</view>
+        <view class="author">{{item.ar[0].name}}</view>
+    </view>
+    <image src="../imgs/nowlisten.png" class="nowlisten"></image>
+</view>
+
+<view  hidden="{{!hidden}}" class="songlist" wx:for="{{searchlist}}"
+ data-songid="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.ar[0].name}}" data-img="{{item.al.picUrl}}" data-pic="{{item.al.pic}}" data-index="{{index}}"  bindtap="goSong">
+    <image src="{{item.al.picUrl}}" class="songimgs"></image>
+    <view>
+        <view class="song">{{item.name}}</view>
+        <view class="author">{{item.ar[0].name}}</view>
+    </view>
+    <image src="../imgs/nowlisten.png" class="nowlisten"></image>
+</view>

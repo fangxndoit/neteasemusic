@@ -1,0 +1,10 @@
+<!--pages/songList/songList.wxml-->
+<view class="allitem">
+    <view class="item" wx:for="{{playList}}"    bindtap="goListDetail" data-id="{{item.id}}" data-name="{{item.name}}" data-coverimg="{{item.coverImgUrl}}" data-coverimgid="{{item.coverImgId_str}}" data-creator="{{item.creator}}" >
+      <text class="bar" bindtap="filter({{item.playCount}})">{{item.playCount}}</text>
+      <image class="item-img" src="{{item.coverImgUrl}}"></image>
+      <text class="item-name">{{item.name}}</text>
+    
+    </view>
+  </view>
+  

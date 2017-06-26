@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/rage/rage",
+    "pages/songList/songList",
+    "pages/hostSinger/hostSinger",
+    "pages/leaderBoard/leaderBoard",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/listDetail/listDetail",
+    "pages/songDetail/songDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#CE3D3E",
+    "navigationBarTitleText": "网页云音乐",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/rage/rage",
+      "text": "个性推荐"
+    },{
+      "pagePath": "pages/songList/songList",
+      "text": "歌单"
+    },
+    {
+      "pagePath": "pages/hostSinger/hostSinger",
+      "text": "热门歌曲"
+    },
+    {
+      "pagePath": "pages/leaderBoard/leaderBoard",
+      "text": "排行榜"
+    }],
+    "position": "top",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#CE3D3E",
+    "borderStyle": "white"
+  }
+}

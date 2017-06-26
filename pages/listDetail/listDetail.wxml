@@ -1,0 +1,27 @@
+
+<view class="playlist-info">
+    <view class="info-gallery">
+        <image class="img" src="{{imgsrc}}"></image>
+        </view>
+    <view class="info">
+        <text class="name">{{name}}</text>
+        <view class="author">
+        <image class="headimg" src="{{headimgsrc}}" ></image>
+        <span class="author-name">{{nickname}}</span> 
+        </view>
+    </view>
+</view>
+<view class="add-all" bindtap="listgoSong">
+    <image class="imgbtn" src="../imgs/add.png" ></image>
+    <span class="playall">播放全部</span>
+</view>
+<scroll-view scroll-y>
+    <view class="list" wx:for="{{playlist}}" wx:key="{{index}}" data-songid="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.ar[0].name}}" data-img="{{item.al.picUrl}}" data-pic="{{item.al.pic}}" data-index="{{index}}" bindtap="goSong" >
+        <view class="num">{{index+1}}</view>
+        <view class="music-info" >
+            <view class="sing" style="color:{{color}};">{{item.name}}</view>
+            <view class="singer">{{item.ar[0].name}}</view>
+        </view>
+    </view>
+    
+</scroll-view>

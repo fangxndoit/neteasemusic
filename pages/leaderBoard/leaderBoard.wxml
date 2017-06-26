@@ -1,0 +1,3 @@
+<!--pages/leaderBoard/leaderBoard.wxml-->
+<view>未开发。。。</view>
+<view>second: {{second}} micro second:{{micro_second}}</view>
